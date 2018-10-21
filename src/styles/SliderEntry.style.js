@@ -22,8 +22,14 @@ export const sliderWidth = viewportWidth;
 export const itemWidth = slideWidth + itemHorizontalMargin * 2;
 
 const entryBorderRadius = 8;
+const challengeStatusHeight = viewportHeight * 0.38;
 
 export default StyleSheet.create({
+    challengeStatusContainer: {
+        marginLeft: 15,
+        height: challengeStatusHeight,
+        paddingBottom: 18 // needed for shadow
+    },
     slideInnerContainer: {
         width: itemWidth,
         height: slideHeight,

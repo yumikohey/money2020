@@ -14,7 +14,8 @@ export default class Profile extends Component {
         ];
         const user = users[0];
         return (
-            <View style={styles.profileView}>
+            <View style={styles.profileView} >
+                <TouchableOpacity onPress={() => this.props.changePageWithPageIndex(2)} >
                 <View style={styles.profileContainer}>
                     <Avatar
                         medium
@@ -31,6 +32,7 @@ export default class Profile extends Component {
                         </Text>
                     </View>
                 </View>
+                </TouchableOpacity>
             </View>
         );
     }

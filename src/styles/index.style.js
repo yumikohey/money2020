@@ -166,5 +166,13 @@ export default StyleSheet.create({
     takenChallengeItemContainer: {
         flex: 1,
         flexDirection: 'row'
+    },
+
+    /**
+     * Challenge Status
+     */
+    challengeStatusTitle: {
+        fontSize: 32,
+        fontWeight: 'bold'
     }
 });
