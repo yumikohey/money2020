@@ -11,7 +11,6 @@ import {Platform, StyleSheet, View, Text} from 'react-native';
 import Main from './src/components/Main';
 import Challenge from './src/components/Challenge';
 import TakenChallenges from './src/components/TakenChallenges';
-
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
