@@ -1,0 +1,12 @@
+challengeId,type,title,description,Duration,goal,unit
+1,Habits,30 days of Cooking,Cut down your spendings by challenging yourself to cooking at home,30,30,Day
+2,Habits,Bare Necessities,"Reduce the percentage of spending on entertaiment and services
+50% reduction in spending",30,50%,Dollars
+3,Financial Wellness,Retirement Goals +,"Increase your contribution to retirement account(401k, IRA, etc) by 1% for next two months
+2% increase in retirement savings",60,2%,Dollars
+4,Financial Wellness,10 in 8 out save 2,"Curb your spendings to be less than your income
+20% reduction in monthly expense",60,20%,Dollars
+5,Financial Wellness,For the Rain,"Build up your rainy day fund
+$500 in a seprate account",120,$500,Dollars
+6,Habits,Cut the Subscription,"Let's figure out the subscriptions that you do not need or never use
+Cut down the number of monthy subscriptions to 0",30,0,services
