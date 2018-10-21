@@ -105,7 +105,7 @@ export default class Main extends Component {
                             onPress={this._toggleModal}
                         />
                         <Text style={{fontSize: 20, fontWeight: 'bold'}}>
-                            Sally
+                            Hi, Sally
                         </Text>
                         <View style={{paddingHorizontal: 25, marginVertical: 15}}>
                             <Text style={{lineHeight: 20, color: '#888', fontSize: 20, fontStyle: 'italic'}}>
