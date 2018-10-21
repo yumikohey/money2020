@@ -50,7 +50,7 @@ export default class SliderEntry extends Component {
         return (
             <TouchableOpacity
               activeOpacity={1}
-              style={styles.slideInnerContainer}
+              style={this.props.styleTall ? styles.slideInnerContainerTall:styles.slideInnerContainer}
               >
                 <View style={styles.shadow} />
                 <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
