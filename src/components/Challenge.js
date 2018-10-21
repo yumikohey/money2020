@@ -5,7 +5,7 @@ import styles, { colors } from '../styles/index.style';
 import SliderEntry from './SliderEntry';
 import * as Progress from 'react-native-progress';
 import { Avatar } from 'react-native-elements';
-import { ENTRIES1 } from '../static/entries';
+import { openChallenge } from '../static/entries';
 import PayPal from 'react-native-paypal-wrapper';
 
 export default class Challenge extends Component {
@@ -24,7 +24,7 @@ export default class Challenge extends Component {
         PayPal.pay({
         price: '20.20',
         currency: 'USD',
-        description: ENTRIES1[this.props.itemIndex].title,
+        description: openChallenge[this.props.itemIndex].title,
         }).then(
             // TODO: show ok message? dismiss views?
             confirm => console.log(confirm)
@@ -43,7 +43,7 @@ export default class Challenge extends Component {
                     <Text style={styles.challengeStatusTitle}>Challenge Status</Text>
                 </View>
                 <View style={{width: '95%'}}>
-                    <SliderEntry isChallangeStatusPage={true} data={ENTRIES1[this.props.itemIndex]} even={(this.props.itemIndex + 1) % 2 === 0} />
+                    <SliderEntry isChallangeStatusPage={true} data={openChallenge[this.props.itemIndex]} even={(this.props.itemIndex + 1) % 2 === 0} />
                 </View>
                 <View style={{ marginHorizontal: 15 }}>
                     <FlatList

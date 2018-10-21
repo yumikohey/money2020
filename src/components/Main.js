@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Modal } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import { sliderWidth, itemWidth } from '../styles/SliderEntry.style';
-import { ENTRIES1, ENTRIES2 } from '../static/entries';
+import { openChallenge, ENTRIES2 } from '../static/entries';
 import styles, { colors } from '../styles/index.style';
 import SliderEntry from './SliderEntry';
 import Profile from './Profile';
@@ -47,7 +47,7 @@ export default class Main extends Component {
                 <Profile changePageWithPageIndex={this.props.changePageWithPageIndex}/>
                 <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
                         <Carousel
-                            data={isTinder ? ENTRIES2 : ENTRIES1}
+                            data={isTinder ? ENTRIES2 : openChallenge}
                             renderItem={isTinder ? this._renderLightItem : this._renderItem}
                             sliderWidth={sliderWidth}
                             itemWidth={itemWidth}
