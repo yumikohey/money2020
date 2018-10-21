@@ -24,14 +24,23 @@ export default class App extends Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
-      pageIndex: 2
+      pageIndex: 0,
+      itemIndex: 0,
     }
     this.changePageWithPageIndex = this.changePageWithPageIndex.bind(this);
+    this.changePageWithPageIndexAndItemIndex = this.changePageWithPageIndexAndItemIndex.bind(this);
   }
 
   changePageWithPageIndex(pageIndex) {
     this.setState({
       pageIndex: pageIndex
+    });
+  }
+
+  changePageWithPageIndexAndItemIndex(pageIndex, itemIndex) {
+    this.setState({
+      pageIndex: pageIndex,
+      itemIndex: itemIndex
     });
   }
 
@@ -41,8 +50,8 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         {/* <Text> Testing !!! </Text> */}
-        { pageIndex === 0 && <Main changePageWithPageIndex={this.changePageWithPageIndex} />}
-        { pageIndex === 1 && <Challenge changePageWithPageIndex={this.changePageWithPageIndex} />}
+        { pageIndex === 0 && <Main changePageWithPageIndexAndItemIndex={this.changePageWithPageIndexAndItemIndex} />}
+        { pageIndex === 1 && <Challenge changePageWithPageIndex={this.changePageWithPageIndex} itemIndex={this.state.itemIndex} />}
         { pageIndex === 2 && <TakenChallenges />}
       </View>
     );

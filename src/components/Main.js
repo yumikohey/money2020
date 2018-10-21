@@ -13,7 +13,11 @@ export default class Main extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+          itemIndex: 0
+        }
         this._clickSupport = this._clickSupport.bind(this);
+        this._onCarouselChanged = this._onCarouselChanged.bind(this);
     }
 
 
@@ -26,8 +30,13 @@ export default class Main extends Component {
     }
 
     _clickSupport () {
-        this.props.changePageWithPageIndex(1);
+        this.props.changePageWithPageIndexAndItemIndex(1, this.state.itemIndex);
         // alert('support');
+    }
+
+    _onCarouselChanged (index){
+        // console.log(index);
+        this.setState({itemIndex: index});
     }
 
     layoutExample (number, title, type) {
@@ -36,16 +45,17 @@ export default class Main extends Component {
             <View>
                 <Profile />
                 <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
-                        <Carousel
-                            data={isTinder ? ENTRIES2 : ENTRIES1}
-                            renderItem={isTinder ? this._renderLightItem : this._renderItem}
-                            sliderWidth={sliderWidth}
-                            itemWidth={itemWidth}
-                            containerCustomStyle={styles.slider}
-                            contentContainerCustomStyle={styles.sliderContentContainer}
-                            layout={type}
-                            loop={true}
-                        />
+                    <Carousel
+                        data={isTinder ? ENTRIES2 : ENTRIES1}
+                        renderItem={isTinder ? this._renderLightItem : this._renderItem}
+                        sliderWidth={sliderWidth}
+                        itemWidth={itemWidth}
+                        containerCustomStyle={styles.slider}
+                        contentContainerCustomStyle={styles.sliderContentContainer}
+                        layout={type}
+                        loop={true}
+                        onSnapToItem={this._onCarouselChanged}
+                    />
                 </View>
                 <View style={styles.buttonContainer}>
                     <LinearGradient
