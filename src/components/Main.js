@@ -81,12 +81,12 @@ export default class Main extends Component {
                         <Avatar
                             large
                             rounded
-                            source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"}}
+                            source={{uri: "https://images.unsplash.com/photo-1517630800677-932d836ab680?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8df5cbde7cb099c1565a250f910a42b0&auto=format&fit=crop&w=934&q=80"}}
                             activeOpacity={0.7}
                             containerStyle={{top: -10}}
                         />
                         <Text style={{fontSize: 20, fontWeight: 'bold'}}>
-                            Hello World
+                            Hi, Sally
                         </Text>
                         <View style={{paddingHorizontal: 25, marginVertical: 15}}>
                             <Text style={{lineHeight: 20, color: '#888', fontSize: 20, fontStyle: 'italic'}}>
