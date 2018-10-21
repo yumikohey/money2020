@@ -93,5 +93,18 @@ export default StyleSheet.create({
         flex: 1,
         marginHorizontal: 30,
         top: 50
-    }
+    },
+    profileContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    profileText: {
+        marginHorizontal: 10
+    },
+    profileSubtitle: {
+        marginTop: 6,
+        color: '#36acaa',
+        fontSize: 14,
+        fontStyle: 'italic'
+    },
 });

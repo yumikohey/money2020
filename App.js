@@ -10,6 +10,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, View, Text} from 'react-native';
 import Main from './src/components/Main';
 import Challenge from './src/components/Challenge';
+import TakenChallenges from './src/components/TakenChallenges';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -23,7 +24,7 @@ export default class App extends Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
-      pageIndex: 0
+      pageIndex: 2
     }
   }
 
@@ -34,6 +35,7 @@ export default class App extends Component<Props> {
         <Text> Testing !!! </Text>
         { pageIndex === 0 && <Main />}
         { pageIndex === 1 && <Challenge />}
+        { pageIndex === 2 && <TakenChallenges />}
       </View>
     );
   }

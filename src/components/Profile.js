@@ -15,7 +15,16 @@ export default class Profile extends Component {
         const user = users[0];
         return (
             <View style={styles.profileView}>
-                <ListItem key={1} roundAvatar title={user.name} avatar={{uri:user.avatar}} hideChevron/>
+                <View style={styles.profileContainer}>
+                    <ListItem key={1} roundAvatar title={user.name} avatar={{uri:user.avatar}} hideChevron/>
+                    <View style={styles.profileText}>
+                        <Text>Sally</Text>
+                        <Text style={styles.profileSubtitle}>
+                            Completed challenges: 3
+                            Earned: $40.40
+                        </Text>
+                    </View>
+                </View>
             </View>
         );
     }
