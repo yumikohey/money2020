@@ -47,10 +47,7 @@ export default class Challenge extends Component {
                 </View>
                 <View style={{ marginHorizontal: 15 }}>
                     <FlatList
-                        data={[
-                            {key: 'Devin', description:''},
-                            {key: 'Jackson', description:''},
-                        ]}
+                        data={openChallenge[this.props.itemIndex].userInfo}
                         renderItem={({item, index}) => {
                             return (
                                 <LinearGradient start={{x: 1, y: 0.2}} end={{x: 0, y: 0}}  colors={index % 2 === 0 ? colors[0] : colors[1]} style={styles.challengeItemContainer}>
@@ -69,9 +66,9 @@ export default class Challenge extends Component {
                                             containerStyle={{marginLeft: 15, width: 40}}
                                         />
                                         <View style={styles.challengeItemText}>
-                                            <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>Sally: Saved $83.25</Text>
+                                            <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>{item.userName}: {item.userProgress} {item.userProgress}</Text>
                                             <View style={{ marginTop: 10}}>
-                                                <Progress.Bar progress={index % 2 === 0 ? 0.3 : 0.0} width={200} borderColor={index % 2 === 0 ? '#FF9800' : 'rgba(0, 122, 255, 1)' } color={index % 2 === 0 ? '#F44336': 'rgba(0, 122, 255, 1)'} borderWidth={1} animated={true} />
+                                                <Progress.Bar progress={item.userPercentProgress} width={200} borderColor={index % 2 === 0 ? '#FF9800' : 'rgba(0, 122, 255, 1)' } color={index % 2 === 0 ? '#F44336': 'rgba(0, 122, 255, 1)'} borderWidth={1} animated={true} />
                                             </View>
                                         </View>
                                     </View>
