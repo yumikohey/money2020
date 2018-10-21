@@ -21,11 +21,11 @@ export default class Main extends Component {
     }
 
     _renderLightItem ({item, index}) {
-        return <SliderEntry data={item} even={false} styleTall={true} />;
+        return <SliderEntry data={item} even={false} />;
     }
 
     _renderItem ({item, index}) {
-        return <SliderEntry data={item} even={(index + 1) % 2 === 0} styleTall={true} />;
+        return <SliderEntry data={item} even={(index + 1) % 2 === 0} />;
     }
 
     _clickSupport () {

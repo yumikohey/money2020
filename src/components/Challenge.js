@@ -2,38 +2,15 @@ import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styles, { colors } from '../styles/index.style';
+import { ENTRIES1 } from '../static/entries';
 import SliderEntry from './SliderEntry';
 import * as Progress from 'react-native-progress';
 import { Avatar } from 'react-native-elements';
-import { ENTRIES1 } from '../static/entries';
-import PayPal from 'react-native-paypal-wrapper';
 
 export default class Challenge extends Component {
     constructor(props) {
         super(props);
-        this.payByPaypal = this.payByPaypal.bind(this);
     }
-
-
-
-
-    payByPaypal() {
-        
-        // 3 env available: NO_NETWORK, SANDBOX, PRODUCTION
-        PayPal.initialize(PayPal.SANDBOX, "Abi--ut6W_Ro2ZP3nesMBjEb0QLZ9_m0sNAp9B7LGM4GAP1y_wKNzO0VPY_G8qTNYJZryHb8iM3VA2Rg");
-        PayPal.pay({
-        price: '20.20',
-        currency: 'USD',
-        description: ENTRIES1[this.props.itemIndex].title,
-        }).then(
-            // TODO: show ok message? dismiss views?
-            confirm => console.log(confirm)
-        )
-        .catch(error => console.log(error));
-
-        
-    }
-
 
     render() {
         const colors = [['#00FFFF', '#17C8FF', '#329BFF', '#4C64FF', '#6536FF', '#8000FF'], ['#FF9800', '#F44336']];
