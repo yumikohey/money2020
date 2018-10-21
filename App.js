@@ -32,7 +32,6 @@ export default class App extends Component<Props> {
     const { pageIndex } = this.state;
     return (
       <View style={styles.container}>
-        <Text> Testing !!! </Text>
         { pageIndex === 0 && <Main />}
         { pageIndex === 1 && <Challenge />}
         { pageIndex === 2 && <TakenChallenges />}
@@ -45,7 +44,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   }
 });

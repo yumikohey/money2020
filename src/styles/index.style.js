@@ -107,4 +107,66 @@ export default StyleSheet.create({
         fontSize: 14,
         fontStyle: 'italic'
     },
+    challengeItemText: {
+        width: 200,
+        left: 20
+    },
+    /**
+     * TakenChallenges 
+     */
+    takenChallengesContainer: {
+        flex: 1,
+        marginVertical: 80,
+        marginHorizontal: 10
+    },
+    overallContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        height: 100,
+    },
+    overallCellWithBorder: {
+        height: 80,
+        borderRightWidth: 5,
+        borderRightColor: '#0C309A',
+        width: '33%',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    overallCellwoBorder: {
+        height: 80,
+        width: '33%',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    overallTextDescription: {
+        color: '#0C309A',
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
+    overallTextScore: {
+        color: '#438eff',
+        fontSize: 28,
+        fontWeight: 'bold'
+    },
+    challengeItemContainer: {
+        flex: 1,
+        paddingLeft: 15,
+        paddingRight: 15,
+        paddingVertical: 15,
+        borderRadius: 5,
+        height: 80,
+        marginVertical: 15,
+    },
+    itemText: {
+        fontSize: 18,
+        fontFamily: 'Gill Sans',
+        textAlign: 'center',
+        margin: 10,
+        color: '#ffffff',
+        backgroundColor: 'transparent',
+    },
+    takenChallengeItemContainer: {
+        flex: 1,
+        flexDirection: 'row'
+    }
 });
