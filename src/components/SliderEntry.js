@@ -3,6 +3,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { ParallaxImage } from 'react-native-snap-carousel';
 import styles from '../styles/SliderEntry.style';
+import { Avatar } from 'react-native-elements';
 
 export default class SliderEntry extends Component {
 
@@ -34,10 +35,6 @@ export default class SliderEntry extends Component {
         );
     }
 
-    _viewChallenge () {
-        alert('clicked');
-    }
-
     render () {
         const { data: { title, subtitle }, even } = this.props;
 
@@ -54,7 +51,6 @@ export default class SliderEntry extends Component {
             <TouchableOpacity
               activeOpacity={1}
               style={styles.slideInnerContainer}
-              onPress={this._viewChallenge}
               >
                 <View style={styles.shadow} />
                 <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
@@ -62,13 +58,24 @@ export default class SliderEntry extends Component {
                     <View style={[styles.radiusMask, even ? styles.radiusMaskEven : {}]} />
                 </View>
                 <View style={[styles.textContainer, even ? styles.textContainerEven : {}]}>
-                    { uppercaseTitle }
-                    <Text
-                      style={[styles.subtitle, even ? styles.subtitleEven : {}]}
-                      numberOfLines={2}
-                    >
-                        { subtitle }
-                    </Text>
+                    <View style={styles.challengeTitleContainer}>
+                        <Avatar
+                            small
+                            rounded
+                            source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"}}
+                            onPress={() => console.log("Works!")}
+                            activeOpacity={0.7}
+                        />
+                        <View style={styles.challengeTitles}>
+                            { uppercaseTitle }
+                            <Text
+                            style={[styles.subtitle, even ? styles.subtitleEven : {}]}
+                            numberOfLines={2}
+                            >
+                                { subtitle }
+                            </Text>
+                        </View>
+                    </View>
                 </View>
             </TouchableOpacity>
         );

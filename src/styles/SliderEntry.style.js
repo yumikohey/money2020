@@ -80,6 +80,13 @@ export default StyleSheet.create({
         borderBottomLeftRadius: entryBorderRadius,
         borderBottomRightRadius: entryBorderRadius
     },
+    challengeTitleContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    challengeTitles: {
+        marginHorizontal: 10
+    },
     textContainerEven: {
         backgroundColor: colors.black
     },

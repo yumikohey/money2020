@@ -47,7 +47,7 @@ export default class Main extends Component {
                         >
                            <TouchableOpacity style={styles.touchableButton} onPress={this._clickSupport}>
                                 <Text style={styles.buttonText}>
-                                    Support!
+                                    Accept Challenge
                                 </Text>
                             </TouchableOpacity>
                     </LinearGradient>
