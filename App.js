@@ -46,6 +46,7 @@ export default class App extends Component<Props> {
 
   render() {
     const { pageIndex } = this.state;
+    console.log(this);
     return (
       <View style={styles.container}>
         { pageIndex === 0 && <Main
