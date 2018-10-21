@@ -10,6 +10,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Avatar, Button } from 'react-native-elements';
 import Modal from "react-native-modal";
 import * as Progress from 'react-native-progress';
+import PayPal from 'react-native-paypal-wrapper';
 
 export default class Main extends Component {
     constructor(props) {
@@ -20,6 +21,7 @@ export default class Main extends Component {
         }
         this._clickSupport = this._clickSupport.bind(this);
         this._onCarouselChanged = this._onCarouselChanged.bind(this);
+        this.payByPaypal = this.payByPaypal.bind(this);
     }
 
     _renderLightItem ({item, index}) {
@@ -43,6 +45,21 @@ export default class Main extends Component {
 
     getPaymentAmount = () => {
         return 'Paypal';
+    }
+
+    payByPaypal() {
+        // 3 env available: NO_NETWORK, SANDBOX, PRODUCTION
+        PayPal.initialize(PayPal.NO_NETWORK, "Abi--ut6W_Ro2ZP3nesMBjEb0QLZ9_m0sNAp9B7LGM4GAP1y_wKNzO0VPY_G8qTNYJZryHb8iM3VA2Rg");
+        PayPal.pay({
+        price: '20.20',
+        currency: 'USD',
+        description: openChallenge[this.state.itemIndex].title,
+        }).then(()=>{
+
+            this._toggleModal();
+            this.props.changePageWithPageIndexAndItemIndex(1, this.state.itemIndex);
+        })
+        .catch(error => this._toggleModal());
     }
 
     layoutExample (number, title, type) {
@@ -84,6 +101,7 @@ export default class Main extends Component {
                             source={{uri: "https://images.unsplash.com/photo-1517630800677-932d836ab680?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8df5cbde7cb099c1565a250f910a42b0&auto=format&fit=crop&w=934&q=80"}}
                             activeOpacity={0.7}
                             containerStyle={{top: -10}}
+                            onPress={this._toggleModal}
                         />
                         <Text style={{fontSize: 20, fontWeight: 'bold'}}>
                             Hi, Sally
@@ -93,7 +111,7 @@ export default class Main extends Component {
                                 Are you ready to bet <Text style={{color:'#4C64FF'}}>$20.20</Text> on accepting this challenge? If you win, we will deposit <Text style={{color:'#4C64FF'}}>$40.40</Text> to your IRA.
                             </Text>
                         </View>
-                        <TouchableOpacity onPress={this._toggleModal}>
+                        <TouchableOpacity onPress={this.payByPaypal}>
                             <Progress.Circle borderWidth={5} size={80} showsText={true} formatText={this.getPaymentAmount} textStyle={{fontSize: 16, color: '#4C64FF', fontWeight: 'bold'}}/>
                         </TouchableOpacity>
                     </View>
