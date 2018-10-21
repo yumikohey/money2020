@@ -29,6 +29,7 @@ export default class App extends Component<Props> {
     }
     this.changePageWithPageIndex = this.changePageWithPageIndex.bind(this);
     this.changePageWithPageIndexAndItemIndex = this.changePageWithPageIndexAndItemIndex.bind(this);
+    console.disableYellowBox = true;
   }
 
   changePageWithPageIndex(pageIndex) {

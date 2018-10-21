@@ -50,7 +50,7 @@ export default class Challenge extends Component {
                         data={openChallenge[this.props.itemIndex].userInfo}
                         renderItem={({item, index}) => {
                             return (
-                                <LinearGradient start={{x: 1, y: 0.2}} end={{x: 0, y: 0}}  colors={index % 2 === 0 ? colors[0] : colors[1]} style={styles.challengeItemContainer}>
+                                <LinearGradient key={index} start={{x: 1, y: 0.2}} end={{x: 0, y: 0}}  colors={index % 2 === 0 ? colors[0] : colors[1]} style={styles.challengeItemContainer}>
                                     <View style={styles.takenChallengeItemContainer}>
                                         {index % 2 === 0 ? <Image
                                             style={{top: 5, width: 25, height: 25}}
