@@ -26,15 +26,23 @@ export default class App extends Component<Props> {
     this.state = {
       pageIndex: 2
     }
+    this.changePageWithPageIndex = this.changePageWithPageIndex.bind(this);
+  }
+
+  changePageWithPageIndex(pageIndex) {
+    this.setState({
+      pageIndex: pageIndex
+    });
   }
 
   render() {
     const { pageIndex } = this.state;
+    console.log(this);
     return (
       <View style={styles.container}>
-        <Text> Testing !!! </Text>
-        { pageIndex === 0 && <Main />}
-        { pageIndex === 1 && <Challenge />}
+        {/* <Text> Testing !!! </Text> */}
+        { pageIndex === 0 && <Main changePageWithPageIndex={this.changePageWithPageIndex} />}
+        { pageIndex === 1 && <Challenge changePageWithPageIndex={this.changePageWithPageIndex} />}
         { pageIndex === 2 && <TakenChallenges />}
       </View>
     );

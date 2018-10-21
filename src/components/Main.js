@@ -10,6 +10,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Button } from 'react-native-elements';
 
 export default class Main extends Component {
+
+    constructor(props) {
+        super(props);
+        this._clickSupport = this._clickSupport.bind(this);
+    }
+
+
     _renderLightItem ({item, index}) {
         return <SliderEntry data={item} even={false} />;
     }
@@ -19,7 +26,8 @@ export default class Main extends Component {
     }
 
     _clickSupport () {
-        alert('support');
+        this.props.changePageWithPageIndex(1);
+        // alert('support');
     }
 
     layoutExample (number, title, type) {
