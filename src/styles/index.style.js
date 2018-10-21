@@ -90,9 +90,7 @@ export default StyleSheet.create({
      * Profile
      */
     profileView: {
-        flex: 1,
         marginHorizontal: 30,
-        top: 50
     },
     profileContainer: {
         flexDirection: 'row',
