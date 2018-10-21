@@ -37,6 +37,17 @@ export default class Challenge extends Component {
 
     render() {
         const colors = [['#00FFFF', '#17C8FF', '#329BFF', '#4C64FF', '#6536FF', '#8000FF'], ['#FF9800', '#F44336']];
+
+        // let data = JSON.parse(JSON.stringify({}, openChallenge[this.props.itemIndex]));
+        // console.log(data);
+        // data.userInfo.push(
+        //     {
+        //       "userID": 205,
+        //       "userName": "Sally",
+        //       "userPercentProgress": 0,
+        //       "userProgress": 0,
+        //       "userPic": "https://images.unsplash.com/photo-1517630800677-932d836ab680?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8df5cbde7cb099c1565a250f910a42b0&auto=format&fit=crop&w=934&q=80"
+        //     })
         return (
             <View style={{flex: 1, paddingVertical: 80, paddingVertical: 20}}>
                 <View style={{ marginTop: 50, marginBottom: 20, marginHorizontal: 15 }}>
@@ -66,7 +77,7 @@ export default class Challenge extends Component {
                                             containerStyle={{marginLeft: 15, width: 40}}
                                         />
                                         <View style={styles.challengeItemText}>
-                                            <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>{item.userName}: Saved ${item.userProgress}</Text>
+                                            <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>{item.userName}: {item.action}{item.userProgress}</Text>
                                             <View style={{ marginTop: 10}}>
                                                 <Progress.Bar progress={item.userPercentProgress} width={200} borderColor={index % 2 === 0 ? '#FF9800' : 'rgba(0, 122, 255, 1)' } color={index % 2 === 0 ? '#F44336': 'rgba(0, 122, 255, 1)'} borderWidth={1} animated={true} />
                                             </View>

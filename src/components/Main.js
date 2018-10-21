@@ -18,6 +18,7 @@ export default class Main extends Component {
         this.state = {
           itemIndex: 0,
           isModalVisible: false
+          
         }
         this._clickSupport = this._clickSupport.bind(this);
         this._onCarouselChanged = this._onCarouselChanged.bind(this);
