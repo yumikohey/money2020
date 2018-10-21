@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, View, Text} from 'react-native';
 import Main from './src/components/Main';
+import Challenge from './src/components/Challenge';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -19,11 +20,20 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pageIndex: 0
+    }
+  }
+
   render() {
+    const { pageIndex } = this.state;
     return (
       <View style={styles.container}>
         <Text> Testing !!! </Text>
-        <Main />
+        { pageIndex === 0 && <Main />}
+        { pageIndex === 1 && <Challenge />}
       </View>
     );
   }

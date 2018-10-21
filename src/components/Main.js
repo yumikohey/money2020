@@ -28,8 +28,6 @@ export default class Main extends Component {
             <View>
                 <Profile />
                 <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
-                        <Text style={[styles.title, isTinder ? {} : styles.titleDark]}>{`Example ${number}`}</Text>
-                        <Text style={[styles.subtitle, isTinder ? {} : styles.titleDark]}>{title}</Text>
                         <Carousel
                             data={isTinder ? ENTRIES2 : ENTRIES1}
                             renderItem={isTinder ? this._renderLightItem : this._renderItem}

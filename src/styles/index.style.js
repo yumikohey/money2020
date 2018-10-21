@@ -42,7 +42,6 @@ export default StyleSheet.create({
         flex: 1
     },
     exampleContainer: {
-        paddingVertical: 30
     },
     exampleContainerDark: {
         backgroundColor: colors.black
@@ -91,6 +90,8 @@ export default StyleSheet.create({
      * Profile
      */
     profileView: {
-        flex: 1
+        flex: 1,
+        marginHorizontal: 30,
+        top: 50
     }
 });
