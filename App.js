@@ -49,9 +49,11 @@ export default class App extends Component<Props> {
     console.log(this);
     return (
       <View style={styles.container}>
-        { pageIndex === 0 && <Main changePageWithPageIndexAndItemIndex={this.changePageWithPageIndexAndItemIndex} />}
-        { pageIndex === 1 && <Challenge changePageWithPageIndex={this.changePageWithPageIndex} itemIndex={this.state.itemIndex} />}
-        { pageIndex === 2 && <TakenChallenges />}
+        { pageIndex === 0 && <Main
+                                  changePageWithPageIndex={this.changePageWithPageIndex}
+                                  changePageWithPageIndexAndItemIndex={this.changePageWithPageIndexAndItemIndex}/>}
+        { pageIndex === 1 && <Challenge changePageWithPageIndex={this.changePageWithPageIndex} itemIndex={this.state.itemIndex}/>}
+        { pageIndex === 2 && <TakenChallenges changePageWithPageIndex={this.changePageWithPageIndex}/>}
       </View>
     );
   }

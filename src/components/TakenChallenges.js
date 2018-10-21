@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from '../styles/index.style';
-import { View, Text, FlatList, Image } from 'react-native';
+import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 import { Avatar } from 'react-native-elements';
 
 export default class TakenChallenges extends Component {
@@ -62,6 +62,19 @@ export default class TakenChallenges extends Component {
                         );
                     }}
                 />
+                <View style={styles.buttonContainer}>
+                    <LinearGradient
+                        colors={['#00FFFF', '#17C8FF', '#329BFF', '#4C64FF', '#6536FF', '#8000FF']}
+                        start={{x: 0.0, y: 1.0}} end={{x: 1.0, y: 1.0}}
+                        style={styles.buttonLinearGradient}
+                        >
+                           <TouchableOpacity style={styles.touchableButton} onPress={() => this.props.changePageWithPageIndex(0)}>
+                                <Text style={styles.buttonText}>
+                                    Home
+                                </Text>
+                            </TouchableOpacity>
+                    </LinearGradient>
+                </View>
             </View>
         );
     }

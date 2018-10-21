@@ -90,9 +90,7 @@ export default StyleSheet.create({
      * Profile
      */
     profileView: {
-        flex: 1,
         marginHorizontal: 30,
-        top: 50
     },
     profileContainer: {
         flexDirection: 'row',
@@ -168,5 +166,13 @@ export default StyleSheet.create({
     takenChallengeItemContainer: {
         flex: 1,
         flexDirection: 'row'
+    },
+
+    /**
+     * Challenge Status
+     */
+    challengeStatusTitle: {
+        fontSize: 32,
+        fontWeight: 'bold'
     }
 });

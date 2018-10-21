@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from '../styles/index.style';
-import { ListItem } from 'react-native-elements';
+import { Avatar } from 'react-native-elements';
 
 export default class Profile extends Component {
     render() {
@@ -14,9 +14,16 @@ export default class Profile extends Component {
         ];
         const user = users[0];
         return (
-            <View style={styles.profileView}>
+            <View style={styles.profileView} >
+                <TouchableOpacity onPress={() => this.props.changePageWithPageIndex(2)} >
                 <View style={styles.profileContainer}>
-                    <ListItem key={1} roundAvatar title={user.name} avatar={{uri:user.avatar}} hideChevron/>
+                    <Avatar
+                        medium
+                        rounded
+                        source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"}}
+                        activeOpacity={0.7}
+                        containerStyle={{top: -10}}
+                    />
                     <View style={styles.profileText}>
                         <Text>Sally</Text>
                         <Text style={styles.profileSubtitle}>
@@ -25,6 +32,7 @@ export default class Profile extends Component {
                         </Text>
                     </View>
                 </View>
+                </TouchableOpacity>
             </View>
         );
     }

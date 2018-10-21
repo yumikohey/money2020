@@ -36,7 +36,7 @@ export default class SliderEntry extends Component {
     }
 
     render () {
-        const { data: { title, subtitle }, even } = this.props;
+        const { data: { title, subtitle }, even, isChallangeStatusPage } = this.props;
 
         const uppercaseTitle = title ? (
             <Text
@@ -50,7 +50,7 @@ export default class SliderEntry extends Component {
         return (
             <TouchableOpacity
               activeOpacity={1}
-              style={this.props.styleTall ? styles.slideInnerContainerTall:styles.slideInnerContainer}
+              style={isChallangeStatusPage ? styles.challengeStatusContainer : styles.slideInnerContainer}
               >
                 <View style={styles.shadow} />
                 <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>

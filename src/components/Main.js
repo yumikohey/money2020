@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Modal } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import { sliderWidth, itemWidth } from '../styles/SliderEntry.style';
 import { ENTRIES1, ENTRIES2 } from '../static/entries';
@@ -10,16 +10,15 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Button } from 'react-native-elements';
 
 export default class Main extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
-          itemIndex: 0
+          itemIndex: 0,
+          modalVisible: false,
         }
         this._clickSupport = this._clickSupport.bind(this);
         this._onCarouselChanged = this._onCarouselChanged.bind(this);
     }
-
 
     _renderLightItem ({item, index}) {
         return <SliderEntry data={item} even={false} styleTall={true} />;
@@ -31,31 +30,33 @@ export default class Main extends Component {
 
     _clickSupport () {
         this.props.changePageWithPageIndexAndItemIndex(1, this.state.itemIndex);
-        // alert('support');
     }
 
     _onCarouselChanged (index){
-        // console.log(index);
         this.setState({itemIndex: index});
+    }
+
+    setModalVisible(visible) {
+        this.setState({modalVisible: visible});
     }
 
     layoutExample (number, title, type) {
         const isTinder = type === 'tinder';
         return (
             <View>
-                <Profile />
+                <Profile changePageWithPageIndex={this.props.changePageWithPageIndex}/>
                 <View style={[styles.exampleContainer, isTinder ? styles.exampleContainerDark : styles.exampleContainerLight]}>
-                    <Carousel
-                        data={isTinder ? ENTRIES2 : ENTRIES1}
-                        renderItem={isTinder ? this._renderLightItem : this._renderItem}
-                        sliderWidth={sliderWidth}
-                        itemWidth={itemWidth}
-                        containerCustomStyle={styles.slider}
-                        contentContainerCustomStyle={styles.sliderContentContainer}
-                        layout={type}
-                        loop={true}
-                        onSnapToItem={this._onCarouselChanged}
-                    />
+                        <Carousel
+                            data={isTinder ? ENTRIES2 : ENTRIES1}
+                            renderItem={isTinder ? this._renderLightItem : this._renderItem}
+                            sliderWidth={sliderWidth}
+                            itemWidth={itemWidth}
+                            containerCustomStyle={styles.slider}
+                            contentContainerCustomStyle={styles.sliderContentContainer}
+                            layout={type}
+                            loop={true}
+                            onSnapToItem={this._onCarouselChanged}
+                        />
                 </View>
                 <View style={styles.buttonContainer}>
                     <LinearGradient
