@@ -6,33 +6,33 @@ import SliderEntry from './SliderEntry';
 import * as Progress from 'react-native-progress';
 import { Avatar } from 'react-native-elements';
 import { openChallenge } from '../static/entries';
-import PayPal from 'react-native-paypal-wrapper';
+// import PayPal from 'react-native-paypal-wrapper';
 
 export default class Challenge extends Component {
     constructor(props) {
         super(props);
-        this.payByPaypal = this.payByPaypal.bind(this);
+        // this.payByPaypal = this.payByPaypal.bind(this);
     }
 
 
 
 
-    payByPaypal() {
+    // payByPaypal() {
         
-        // 3 env available: NO_NETWORK, SANDBOX, PRODUCTION
-        PayPal.initialize(PayPal.SANDBOX, "Abi--ut6W_Ro2ZP3nesMBjEb0QLZ9_m0sNAp9B7LGM4GAP1y_wKNzO0VPY_G8qTNYJZryHb8iM3VA2Rg");
-        PayPal.pay({
-        price: '20.20',
-        currency: 'USD',
-        description: openChallenge[this.props.itemIndex].title,
-        }).then(
-            // TODO: show ok message? dismiss views?
-            confirm => console.log(confirm)
-        )
-        .catch(error => console.log(error));
+    //     // 3 env available: NO_NETWORK, SANDBOX, PRODUCTION
+    //     PayPal.initialize(PayPal.SANDBOX, "Abi--ut6W_Ro2ZP3nesMBjEb0QLZ9_m0sNAp9B7LGM4GAP1y_wKNzO0VPY_G8qTNYJZryHb8iM3VA2Rg");
+    //     PayPal.pay({
+    //     price: '20.20',
+    //     currency: 'USD',
+    //     description: openChallenge[this.props.itemIndex].title,
+    //     }).then(
+    //         // TODO: show ok message? dismiss views?
+    //         confirm => console.log(confirm)
+    //     )
+    //     .catch(error => console.log(error));
 
         
-    }
+    // }
 
 
     render() {
