@@ -50,7 +50,8 @@ export const openChallenge = [
             "userID": 205,
             "userName": "lglg",
             "userPercentProgress": 0.6666666667,
-            "userProgress": 20
+            "userProgress": 20,
+            "userPic": "https://images.unsplash.com/photo-1525450280520-7d542a86e065?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4259c07277dbffd4dbef268e24ab7998&auto=format&fit=crop&w=1950&q=80",
           }
         ],
         "winner": 0
@@ -72,7 +73,8 @@ export const openChallenge = [
             "userID": 205,
             "userName": "lglg",
             "userPercentProgress": 0.6,
-            "userProgress": 180
+            "userProgress": 180,
+            "userPic": "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1e289110e319d49417dccfc2de46ea3a&auto=format&fit=crop&w=2376&q=80"
           }
         ],
         "winner": 0
@@ -94,7 +96,8 @@ export const openChallenge = [
             "userID": 540,
             "userName": "test2",
             "userPercentProgress": 0.5,
-            "userProgress": 80
+            "userProgress": 80,
+            "userPic": "https://images.unsplash.com/photo-1530047625168-4b29bfbbe1fc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=80d3b79de96c47b48c7775aaef5ae2ee&auto=format&fit=crop&w=1950&q=80"
           }
         ],
         "winner": 0
@@ -116,12 +119,15 @@ export const openChallenge = [
             "userID": 540,
             "userName": "test2",
             "userPercentProgress": 0.24,
-            "userProgress": 120
+            "userProgress": 120,
+            "userPic": "https://images.unsplash.com/photo-1467400492058-1aad44d4bcd6?ixlib=rb-0.3.5&s=c1abab8562722bd82c02a7cfbd1d5f1d&auto=format&fit=crop&w=2380&q=80"
           }
         ],
         "winner": 0
       }
     ];
+
+    //https://images.unsplash.com/photo-1517630800677-932d836ab680?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8df5cbde7cb099c1565a250f910a42b0&auto=format&fit=crop&w=934&q=80
 
 export const ENTRIES2 = [
     {

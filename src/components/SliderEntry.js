@@ -36,7 +36,7 @@ export default class SliderEntry extends Component {
     }
 
     render () {
-        const { data: { title, description }, even, isChallangeStatusPage } = this.props;
+        const { data: { title, description, userInfo }, even, isChallangeStatusPage } = this.props;
 
         const uppercaseTitle = title ? (
             <Text
@@ -62,7 +62,7 @@ export default class SliderEntry extends Component {
                         <Avatar
                             small
                             rounded
-                            source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"}}
+                            source={{uri: userInfo[0].userPic}}
                             activeOpacity={0.7}
                         />
                         <View style={styles.challengeTitles}>

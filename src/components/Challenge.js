@@ -61,12 +61,12 @@ export default class Challenge extends Component {
                                         <Avatar
                                             medium
                                             rounded
-                                            source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"}}
+                                            source={{uri: item.userPic}}
                                             activeOpacity={0.7}
                                             containerStyle={{marginLeft: 15, width: 40}}
                                         />
                                         <View style={styles.challengeItemText}>
-                                            <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>{item.userName}: {item.userProgress} {item.userProgress}</Text>
+                                            <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>{item.userName}: Saved ${item.userProgress}</Text>
                                             <View style={{ marginTop: 10}}>
                                                 <Progress.Bar progress={item.userPercentProgress} width={200} borderColor={index % 2 === 0 ? '#FF9800' : 'rgba(0, 122, 255, 1)' } color={index % 2 === 0 ? '#F44336': 'rgba(0, 122, 255, 1)'} borderWidth={1} animated={true} />
                                             </View>
